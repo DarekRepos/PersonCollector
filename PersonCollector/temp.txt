@@ -1,0 +1,25 @@
+/*$SQL = "CREATE TABLE IF NOT EXISTS persons (
+id INT(6) UNSIGNED PRIMARY KEY AUTO_INCREMENT,
+firstname VARCHAR(55) NOT NULL,
+lastname VARCHAR(155) NOT NULL,
+age INT(3) UNSIGNED
+) ENGINE=InnoDB";
+
+$statement = $pdo->exec($SQL);
+
+if ($statement !== false) {
+    echo $msg = "Tables are created succesfully!<br/>";
+} else {
+    echo $msg = "Error or table already exist!<br/>";
+}
+
+$SQL = "INSERT INTO persons (firstname, lastname, age) VALUES (?, ?, ?)";
+$statement = $pdo->prepare($SQL);
+$statement->execute(["ky", "baoa", "4"]);*/
+
+/*$id=1;
+$statement=$pdo->prepare('select * from persons where id=:id');
+$statement->execute(['id'=>$id]);
+var_dump($statement->fetchall(PDO::FETCH_ASSOC));*/
+
+

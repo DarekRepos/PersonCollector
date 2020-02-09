@@ -1,0 +1,10 @@
+{
+  "autoload": {
+    "psr-4": {
+      "PersonCollector\\": "src"
+    }
+  },
+  "require": {
+    "phpmailer/phpmailer": "^6.1"
+  }
+}
