@@ -12,12 +12,14 @@ $statement = $persons->getAllPersons('persons');
 //TODO: escaping
 //TODO: Add pagination
 ?>
+<main>
 <table>
     <thead>
     <th>ID</th>
     <th>First Name</th>
     <th>Last Name</th>
     <th>Age</th>
+    <th>Actions</th>
     </thead>
     <tbody>
     <?php
@@ -30,8 +32,6 @@ $statement = $persons->getAllPersons('persons');
             <td><?php echo $itemvalue->age; ?></td>
             <td>
                 <a href="edit?id=<?php echo $itemvalue->id; ?>" class="edit_btn">Edit</a>
-            </td>
-            <td>
                 <a href="delete?id=<?php echo $itemvalue->id; ?>" class="delete_btn">Delete</a>
             </td>
         </tr>
@@ -40,3 +40,4 @@ $statement = $persons->getAllPersons('persons');
     ?>
     </tbody>
 </table>
+</main>
