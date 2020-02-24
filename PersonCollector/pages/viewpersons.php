@@ -10,7 +10,7 @@ $persons = new Users($pdo);
 $statement = $persons->getAllPersons('persons');
 //TODO: ilter and validation
 //TODO: escaping
-//var_dump($statement);
+//TODO: Add pagination
 ?>
 <table>
     <thead>
