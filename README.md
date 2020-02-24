@@ -1,6 +1,6 @@
 # Person Collector#
 Recruitment task.
-This is not production ready code. The goal is to not use any framework or library and to write code under 1 hour.
+This is not production ready code. The goal is to not use any framework or library.
 **This is mostly experimental project** due to mixing old and new ideas. 
 ## Why? ##
 This repo is create for some for basic old requirement task from internet related with PHP. This examples may not contain actual trends and ideas.
