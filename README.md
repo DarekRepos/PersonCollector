@@ -34,13 +34,14 @@ Local environment are set up on Linux distribution (Ubuntu).
 User must install:
 * Docker
 * Docker Compose tool
+* Composer 
 
 ### Docker ###
 Docker-compose is used to create local  server environment:
 * php:7.2.1-apache-with some very basic extensions
 * mysql:5.7
 * phpmyadmin
-* Composer
+
 
 ### Composer ###
 which is used to install PHP packages and autoloading.
