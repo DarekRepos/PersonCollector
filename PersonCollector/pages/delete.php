@@ -8,7 +8,7 @@ $pdo = Connection::make();
 
 $persons = new Users($pdo);
 
-//var_dump( $_GET['id']);
+
 //TODO: sanitazing and validating id
 $statement = $persons->delete('persons', $_GET['id']);
 
