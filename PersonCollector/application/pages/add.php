@@ -1,8 +1,9 @@
 <?php
-include dirname(__DIR__) . '/requests/new.php';
+require dirname(__DIR__).'/views/header.php';
+require dirname(__DIR__).'/views/nav.php';
 ?>
 <main>
-    <form role="form" method="POST">
+    <form method="POST" action="/newpersona" >
         <div class="field-group">
             <label class="label" for="firstname">Your first name</label>
             <input class="field" type="text" id="firstname" name="firstname" placeholder="Enter firt name">
@@ -23,3 +24,4 @@ include dirname(__DIR__) . '/requests/new.php';
         </div>
     </form>
 </main>
+<?php require dirname(__DIR__).'/views/footer.php'; ?>
