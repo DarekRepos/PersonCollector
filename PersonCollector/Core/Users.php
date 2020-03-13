@@ -36,6 +36,16 @@ class Users
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    //better to use some libs orm and Models from MVC
+    public function selectFromQuery($query){
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+
     /**
      * @param $table
      * @param $columnName
