@@ -10,20 +10,23 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 header {
     text-align: center;
+    background-color: #333;;
 }
 
 header h1 {
     font-size: 2em;
+    color: #ffffff;
 }
 
 header h2 {
     font-size: 1em;
-    color: #888;
     font-style: italic;
+    color: #ffffff;
 }
 
 nav {
@@ -35,6 +38,7 @@ nav ul {
     display: flex;;
     background-color: #666;
     padding-left: 4px;
+    margin: 0;
     height: 4em;
     justify-content: center;
     align-items: center;
@@ -106,6 +110,7 @@ footer p {
 }
 
 form {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -123,7 +128,7 @@ tr:nth-of-type(odd) {
 }
 
 th {
-    background: #333;
+    background: #8b8b8b;
     color: white;
     font-weight: bold;
 }
@@ -371,5 +376,3 @@ ul.pagination {
 .pagination--end {
 
 }
-
-/*TODO: add better style and javascript elements */
