@@ -1,8 +1,8 @@
-/node_modules
-/public/hot
-/public/storage
-/storage/*.key
-/vendor
+PersonCollector/node_modules
+PersonCollector/public/hot
+PersonCollector/public/storage
+PersonCollector/storage/*.key
+PersonCollector/vendor
 .env
 .env.backup
 .phpunit.result.cache
