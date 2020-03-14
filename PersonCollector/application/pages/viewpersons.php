@@ -17,7 +17,6 @@ $allrows = $rows->getAllPersons('persons');
 $total = count($allrows);
 $pages->set_total($total);
 $statement = $persons->selectFromQuery("SELECT id, firstname, lastname, age FROM " . 'persons' . $pages->get_limit());
-//TODO: Add pagination
 ?>
     <main>
         <table>
