@@ -6,7 +6,7 @@ namespace PersonCollector\Core;
 
 use PDO;
 
-class Users
+class User
 {
     public $id;
     public $firstname;

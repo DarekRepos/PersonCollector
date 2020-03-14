@@ -4,15 +4,15 @@ require dirname(__DIR__) . '/views/nav.php';
 
 
 use PersonCollector\Core\Connection;
-use PersonCollector\Core\Users;
+use PersonCollector\Core\User;
 use voku\helper\Paginator;
 
 
 $pdo = Connection::make();
 
-$persons = new Users($pdo);
+$persons = new User($pdo);
 $pages = new Paginator('10', 'p');
-$rows = new Users($pdo);
+$rows = new User($pdo);
 $allrows = $rows->getAllPersons('persons');
 $total = count($allrows);
 $pages->set_total($total);
