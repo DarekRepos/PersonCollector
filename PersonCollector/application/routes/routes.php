@@ -11,18 +11,20 @@ $router = new Router();
 
 $router->get('/', function () {
     PagesController::ViewPage('home');
-});
+}) && exit();
+
 $router->get('/add', function () {
     PagesController::ViewPage('add');
-});
+}) && exit();
 
 $router->get('/viewpersons', function () {
     PagesController::ViewPage('viewpersons');
-});
+}) && exit();
+
 $router->get('/edit/:id', function ($id) {
     $_SESSION['edit'] = $id;
     PagesController::ViewPage('edit');
-});
+}) && exit();
 
 $router->post('/updateper', function () {
 
@@ -76,7 +78,7 @@ $router->post('/updateper', function () {
         $_SESSION['message'] = "Address saved";
     }
 
-});
+}) && exit();
 
 $router->get('/delete/:id', function ($id) {
     $pdo = Connection::make();
@@ -93,7 +95,7 @@ $router->get('/delete/:id', function ($id) {
         unset($_SESSION['message']);
 
     }
-});
+}) && exit();
 
 $router->post('/newpersona', function () {
 
@@ -142,7 +144,8 @@ $router->post('/newpersona', function () {
         };
     };
 
-//TODO:add support 404 page
 //TODO:a lot of duplicates need refactor all CODE to MVC or use other idea
 ////TODO:add validations
-});
+}) && exit();
+
+include(dirname(dirname(__DIR__ )).'/public/404.html');
