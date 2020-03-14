@@ -1,12 +1,12 @@
 <?php
 
 
-namespace PersonCollector;
+namespace PersonCollector\Core;
 
 
 use PDO;
 
-class Users
+class User
 {
     public $id;
     public $firstname;
@@ -36,6 +36,16 @@ class Users
         return $statement->fetchAll(PDO::FETCH_CLASS);
     }
 
+    //better to use some libs orm and Models from MVC
+    public function selectFromQuery($query){
+
+        $statement = $this->pdo->prepare($query);
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_CLASS);
+    }
+
+
     /**
      * @param $table
      * @param $columnName
@@ -43,7 +53,8 @@ class Users
      */
     public function getAllPersonsOrderedBy($table, $columnName)
     {
-        $query = "SELECT id, firstname, lastname, age FROM " . $table . " ORDER BY " . $columnName;
+        $query =
+            "SELECT id, firstname, lastname, age FROM " . $table . " ORDER BY " . $columnName;
 
         $statement = $this->pdo->prepare($query);
         $statement->execute();
@@ -55,7 +66,7 @@ class Users
         $query = "SELECT id, firstname, lastname, age FROM " . $table. " WHERE id = :id LIMIT 0,1";
 
         $statement = $this->pdo->prepare($query);
-        $statement ->bindParam(':id', $id,PDO::PARAM_INT);
+        $statement ->bindParam(':id', $id, PDO::PARAM_INT);
         $statement->execute();
 
         return $statement->fetch(PDO::FETCH_ASSOC);
@@ -64,14 +75,13 @@ class Users
     {
         $query = "INSERT INTO "
         . $table .
-        " (firstname, lastname, age) VALUES (:firstname, :lastname, :age)
-        ";
+        " (firstname, lastname, age) VALUES (:firstname, :lastname, :age)";
 
         $statement = $this->pdo->prepare($query);
 
-        $statement->bindParam(':firstname',$this->firstname, PDO::PARAM_STR);
-        $statement->bindParam(':lastname',$this->lastname, PDO::PARAM_STR);
-        $statement->bindParam(':age',$this->age, PDO::PARAM_INT);
+        $statement->bindParam(':firstname', $this->firstname,  PDO::PARAM_STR);
+        $statement->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
+        $statement->bindParam(':age', $this->age, PDO::PARAM_INT);
 
         $statement->execute();
         return true;
@@ -84,10 +94,10 @@ class Users
 
         $statement = $this->pdo->prepare($query);
 
-        $statement->bindParam(':id',$this->id, PDO::PARAM_INT);
-        $statement->bindParam(':firstname',$this->firstname, PDO::PARAM_STR);
-        $statement->bindParam(':lastname',$this->lastname, PDO::PARAM_STR);
-        $statement->bindParam(':age',$this->age, PDO::PARAM_INT);
+        $statement->bindParam(':id', $this->id, PDO::PARAM_INT);
+        $statement->bindParam(':firstname', $this->firstname, PDO::PARAM_STR);
+        $statement->bindParam(':lastname', $this->lastname, PDO::PARAM_STR);
+        $statement->bindParam(':age', $this->age, PDO::PARAM_INT);
 
         $statement->execute();
         return true;
@@ -100,7 +110,7 @@ class Users
 
         $statement = $this->pdo->prepare($query);
 
-        $statement->bindParam(':id',$id, PDO::PARAM_INT);
+        $statement->bindParam(':id', $id, PDO::PARAM_INT);
 
         $statement->execute();
         return true;

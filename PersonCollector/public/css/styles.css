@@ -10,20 +10,23 @@ body {
     height: 100vh;
     display: flex;
     flex-direction: column;
+    overflow-x: hidden;
 }
 
 header {
     text-align: center;
+    background-color: #333;;
 }
 
 header h1 {
     font-size: 2em;
+    color: #ffffff;
 }
 
 header h2 {
     font-size: 1em;
-    color: #888;
     font-style: italic;
+    color: #ffffff;
 }
 
 nav {
@@ -35,6 +38,7 @@ nav ul {
     display: flex;;
     background-color: #666;
     padding-left: 4px;
+    margin: 0;
     height: 4em;
     justify-content: center;
     align-items: center;
@@ -106,6 +110,7 @@ footer p {
 }
 
 form {
+    margin-top: 1rem;
     display: flex;
     flex-direction: column;
 }
@@ -123,7 +128,7 @@ tr:nth-of-type(odd) {
 }
 
 th {
-    background: #333;
+    background: #8b8b8b;
     color: white;
     font-weight: bold;
 }
@@ -294,4 +299,80 @@ input[type="submit"].btn {
         padding: 0 0 5px 0;
         margin: 10px 0 0 0;
     }
+}
+
+/*/// Pagination ///*/
+ul.pagination {
+    list-style: none;
+}
+
+.pagination {
+    box-sizing: content-box;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1em;
+    text-align: center;
+}
+
+.pagination li {
+    margin: 0 1.75px 0 1.75px;
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #717171;
+    border-left: 1px solid #717171;;
+    transform: scale(1) rotate(20deg) translateX(0px) translateY(0px) skewX(-10deg) skewY(-20deg);
+}
+
+
+.pagination li > a {
+    padding: 1.1em 1.6em;
+    text-decoration: none;
+    color: #8b969c;
+    transform: scale(1) rotate(0deg) translateX(0px) translateY(0px) skewX(20deg) skewY(0deg);
+}
+
+
+.pagination li > a:link {
+    color: #717171;
+}
+
+.pagination li > a:visited {
+    color: #717171;
+}
+
+.pagination li > a:active {
+    color: #717171;
+}
+
+.pagination li:hover,
+.current {
+    background-color: rgba(251, 93, 0, 0.8);
+    color: #fff;
+}
+
+.pagination li > a:hover {
+    color: #fff;
+}
+
+.pagination li > a:active {
+    color: #717171;
+}
+
+.pagination--start {
+
+}
+
+.current {
+
+
+}
+
+
+.pagination--end {
+
 }

@@ -1,0 +1,12 @@
+PersonCollector/node_modules
+PersonCollector/public/hot
+PersonCollector/public/storage
+PersonCollector/storage/*.key
+PersonCollector/vendor
+.env
+.env.backup
+.phpunit.result.cache
+Homestead.json
+Homestead.yaml
+npm-debug.log
+yarn-error.log
