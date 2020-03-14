@@ -1,13 +1,13 @@
 <?php
 
 use PersonCollector\Core\Connection;
-use PersonCollector\Core\Users;
+use PersonCollector\Core\User;
 
 require dirname(__DIR__).'/views/header.php';
 require dirname(__DIR__).'/views/nav.php';
 $pdo = Connection::make();
 
-$persons = new Users($pdo);
+$persons = new User($pdo);
 $id = filter_var($_SESSION['edit'], FILTER_SANITIZE_NUMBER_INT);
 
 if (!isset($id ) || empty($id)) {

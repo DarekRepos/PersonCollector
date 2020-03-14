@@ -4,7 +4,7 @@
 use Delight\Router\Router;
 use PersonCollector\Controllers\PagesController;
 use PersonCollector\Core\Connection;
-use PersonCollector\Core\Users;
+use PersonCollector\Core\User;
 
 
 $router = new Router();
@@ -28,7 +28,7 @@ $router->post('/updateper', function () {
 
     $pdo = Connection::make();
 
-    $oneperson = new Users($pdo);
+    $oneperson = new User($pdo);
 
     if (isset($_POST["save"])) {
         $_POST = array_map('trim', $_POST);
@@ -81,11 +81,11 @@ $router->post('/updateper', function () {
 $router->get('/delete/:id', function ($id) {
     $pdo = Connection::make();
 
-    $persons = new Users($pdo);
+    $person = new User($pdo);
 
     $id = filter_var($id, FILTER_SANITIZE_NUMBER_INT);
 
-    $statement = $persons->delete('persons', $id);
+    $statement = $person->delete('persons', $id);
 
     if ($statement) {
         Header('Location: /viewpersons');
@@ -99,7 +99,7 @@ $router->post('/newpersona', function () {
 
     $pdo = Connection::make();
 
-    $persons = new Users($pdo);
+    $person = new User($pdo);
 
 
     if (isset($_POST["submit"])) {
@@ -132,11 +132,11 @@ $router->post('/newpersona', function () {
             exit('nok');
         }
 
-        $persons->firstname = htmlspecialchars(strip_tags($_POST['firstname']));
-        $persons->lastname = htmlspecialchars(strip_tags($_POST['lastname']));
-        $persons->age = htmlspecialchars(strip_tags($_POST['age']));
+        $person->firstname = htmlspecialchars(strip_tags($_POST['firstname']));
+        $person->lastname = htmlspecialchars(strip_tags($_POST['lastname']));
+        $person->age = htmlspecialchars(strip_tags($_POST['age']));
 
-        if ($statement = $persons->create('persons')) {
+        if ($statement = $person->create('persons')) {
             Header('Location: /add');
             $_SESSION['message'] = "Address saved";
         };
